@@ -12,10 +12,6 @@ app.use(cors());
 
 // app.use('/login', loginRoute);
 
-app.get('/aaa', (req, res) => {
-    return res.send({welcome: 'home'})
-})
-
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, 'build')));
 
