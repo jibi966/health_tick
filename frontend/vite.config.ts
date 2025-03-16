@@ -13,9 +13,9 @@ export default defineConfig({
     //         },
     //     },
     // },
-    build: {
-        outDir: '../backend/build',
-        emptyOutDir: true, // also necessary
-    }
+    // build: {
+    //     outDir: '../backend/build',
+    //     emptyOutDir: true, // also necessary
+    // }
 })
 
