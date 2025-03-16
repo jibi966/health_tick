@@ -36,14 +36,15 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="static" sx={{background: '#424242'}}>
+        <AppBar position="static" sx={{background: '#fefbec'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
-                    <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}}/>
+                    <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}} color='primary'/>
                     <Typography
                         variant="h6"
                         noWrap
                         component="a"
+                        color='primary'
                         href="#app-bar-with-responsive-menu"
                         sx={{
                             mr: 2,
@@ -51,7 +52,6 @@ function ResponsiveAppBar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
@@ -65,7 +65,7 @@ function ResponsiveAppBar() {
                             aria-controls="menu-appbar"
                             aria-haspopup="true"
                             onClick={handleOpenNavMenu}
-                            color="inherit"
+                            color='primary'
                         >
                             <MenuIcon/>
                         </IconButton>
@@ -97,6 +97,7 @@ function ResponsiveAppBar() {
                         variant="h5"
                         noWrap
                         component="a"
+                        color='primary'
                         href="#app-bar-with-responsive-menu"
                         sx={{
                             mr: 2,
@@ -105,7 +106,6 @@ function ResponsiveAppBar() {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
                             textDecoration: 'none',
                         }}
                     >
@@ -114,9 +114,10 @@ function ResponsiveAppBar() {
                     <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                         {pages.map((page) => (
                             <Button
+                                color='primary'
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{my: 2, color: 'white', display: 'block'}}
+                                sx={{my: 2, display: 'block'}}
                             >
                                 {page}
                             </Button>
@@ -124,7 +125,7 @@ function ResponsiveAppBar() {
                     </Box>
                     <Box sx={{flexGrow: 0}}>
                         <Tooltip title="Open settings">
-                            <IconButton onClick={handleOpenUserMenu} sx={{p: 0}}>
+                            <IconButton onClick={handleOpenUserMenu} sx={{p: 0}} color='primary'>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"/>
                             </IconButton>
                         </Tooltip>
