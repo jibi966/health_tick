@@ -6,10 +6,8 @@ import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
-import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
 
 const pages = ['Home', 'Services', 'Concerns', 'Therapists', 'About Us', 'Login'];
 
@@ -25,111 +23,125 @@ function ResponsiveAppBar() {
     };
 
     return (
-        <AppBar position="static" sx={{background: '#fefbec'}}>
-            <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <AdbIcon sx={{display: {xs: 'none', md: 'flex'}, mr: 1}} color='primary'/>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        color='primary'
-                        href="#app-bar-with-responsive-menu"
-                        sx={{
-                            mr: 2,
-                            display: {xs: 'none', md: 'flex'},
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        LOGO
-                    </Typography>
+        <AppBar position="static"
+                sx={{
+                    background: "#fefbec",
+                    px: {xs: 0, sm: 5}
+                }}>
+            <Toolbar disableGutters>
+                <Typography
+                    variant="h6"
+                    noWrap
+                    component="a"
+                    color="primary"
+                    href="#app-bar-with-responsive-menu"
+                    sx={{
+                        mr: 2,
+                        display: {xs: "none", md: "flex"},
+                        fontFamily: "monospace",
+                        fontWeight: 500,
+                        letterSpacing: ".3rem",
+                        textDecoration: "none",
+                    }}
+                >
+                    LOGO
+                </Typography>
 
-                    <Box sx={{flexGrow: 1, display: {xs: 'flex', md: 'none'}}}>
-                        <IconButton
-                            size="large"
-                            aria-label="account of current user"
-                            aria-controls="menu-appbar"
-                            aria-haspopup="true"
-                            onClick={handleOpenNavMenu}
-                            color='primary'
-                        >
-                            <MenuIcon/>
-                        </IconButton>
-                        <Menu
-                            id="menu-appbar"
-                            anchorEl={anchorElNav}
-                            anchorOrigin={{
-                                vertical: 'bottom',
-                                horizontal: 'left',
-                            }}
-                            keepMounted
-                            transformOrigin={{
-                                vertical: 'top',
-                                horizontal: 'left',
-                            }}
-                            open={Boolean(anchorElNav)}
-                            onClose={handleCloseNavMenu}
-                            sx={{display: {xs: 'block', md: 'none'}}}
-                        >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography sx={{textAlign: 'center'}}>{page}</Typography>
-                                </MenuItem>
-                            ))}
-                        </Menu>
-                    </Box>
-                    <AdbIcon sx={{display: {xs: 'flex', md: 'none'}, mr: 1}}/>
-                    <Typography
-                        variant="h5"
-                        noWrap
-                        component="a"
-                        color='primary'
-                        href="#app-bar-with-responsive-menu"
+                <Box
+                    sx={{
+                        flexGrow: 1,
+                        display: {xs: "flex", md: "none"},
+                    }}
+                >
+                    <IconButton
+                        size="large"
+                        aria-label="account of current user"
+                        aria-controls="menu-appbar"
+                        aria-haspopup="true"
+                        onClick={handleOpenNavMenu}
+                        color="primary"
+                    >
+                        <MenuIcon/>
+                    </IconButton>
+                    <Menu
+                        id="menu-appbar"
+                        anchorEl={anchorElNav}
+                        anchorOrigin={{
+                            vertical: "bottom",
+                            horizontal: "left",
+                        }}
+                        keepMounted
+                        transformOrigin={{
+                            vertical: "top",
+                            horizontal: "left",
+                        }}
+                        open={Boolean(anchorElNav)}
+                        onClose={handleCloseNavMenu}
                         sx={{
-                            mr: 2,
-                            display: {xs: 'flex', md: 'none'},
-                            flexGrow: 1,
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            textDecoration: 'none',
+                            display: {xs: "block", md: "none"},
                         }}
                     >
-                        LOGO
-                    </Typography>
-                    <Box sx={{flexGrow: 1, display: {xs: 'none', md: 'flex'}}}>
                         {pages.map((page) => (
-                            <Button
-                                color='primary'
+                            <MenuItem
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{
-                                    my: 2, display: 'block', fontFamily: 'monospace',
-                                    fontWeight: 700,
-                                }}
                             >
-                                {page}
-                            </Button>
+                                <Typography sx={{textAlign: "center"}}>{page}</Typography>
+                            </MenuItem>
                         ))}
-                    </Box>
-                    <Box sx={{flexGrow: 0}}>
+                    </Menu>
+                </Box>
+                <Typography
+                    variant="h5"
+                    noWrap
+                    component="a"
+                    color="primary"
+                    href="#app-bar-with-responsive-menu"
+                    sx={{
+                        mr: 2,
+                        display: {xs: "flex", md: "none"},
+                        flexGrow: 1,
+                        fontFamily: "monospace",
+                        fontWeight: 500,
+                        letterSpacing: ".3rem",
+                        textDecoration: "none",
+                    }}
+                >
+                    LOGO
+                </Typography>
+                <Box sx={{flexGrow: 1, display: {xs: "none", md: "flex"}}}>
+                    {pages.map((page) => (
                         <Button
-                            color='primary'
-                            key='Book Slot'
+                            color="primary"
+                            key={page}
                             onClick={handleCloseNavMenu}
                             sx={{
-                                my: 2, display: 'block', fontFamily: 'monospace',
-                                fontWeight: 700,
+                                my: 2,
+                                display: "block",
+                                fontFamily: "monospace",
+                                fontWeight: 500,
                             }}
                         >
-                            Book Slot
+                            {page}
                         </Button>
-                    </Box>
-                </Toolbar>
-            </Container>
+                    ))}
+                </Box>
+                <Box sx={{flexGrow: 0}}>
+                    <Button
+                        color="primary"
+                        key="Book Slot"
+                        onClick={handleCloseNavMenu}
+                        sx={{
+                            my: 2,
+                            display: "block",
+                            fontFamily: "monospace",
+                            fontWeight: 500,
+                        }}
+                    >
+                        Book Slot
+                    </Button>
+                </Box>
+            </Toolbar>
         </AppBar>
     );
 }
